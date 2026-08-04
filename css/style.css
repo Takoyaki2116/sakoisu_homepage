@@ -63,18 +63,69 @@ header .container{
 
 .hamburger{
     display:none;
+    width:40px;
+    height:40px;
+
+    position:relative;
+
     background:none;
     border:none;
     cursor:pointer;
 }
 
 .hamburger span{
-    display:block;
+    position:absolute;
+
+    left:5px;
+
     width:30px;
     height:3px;
+
     background:#333;
-    margin:6px 0;
+
+    transition:.3s;
 }
+
+.hamburger span:nth-child(1){
+
+    top:10px;
+
+}
+
+.hamburger span:nth-child(2){
+
+    top:18px;
+
+}
+
+.hamburger span:nth-child(3){
+
+    top:26px;
+
+}
+
+.hamburger.active span:nth-child(1){
+
+    transform:rotate(45deg);
+
+    top:18px;
+
+}
+
+.hamburger.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.hamburger.active span:nth-child(3){
+
+    transform:rotate(-45deg);
+
+    top:18px;
+
+}
+
 
 .logo{
     font-size:28px;
@@ -93,27 +144,35 @@ header .container{
 
     nav{
 
-        display:none;
+    position:fixed;
 
-        position:absolute;
-        top:80px;
-        left:0;
+    top:0;
+    right:0;
 
-        width:100%;
+    width:280px;
+    height:100vh;
 
-        background:white;
+    background:white;
 
-        border-top:1px solid #ddd;
+    transform:translateX(100%);
+
+    transition:transform .3s ease;
+
+    z-index:999;
+
+    padding-top:90px;
 
     }
 
     nav.active{
 
-        display:block;
+        transform:translateX(0);
 
     }
 
     .nav-menu{
+
+        display:flex;
 
         flex-direction:column;
 
@@ -121,13 +180,19 @@ header .container{
 
     .nav-menu li{
 
-        text-align:center;
-        padding:20px;
-
         border-bottom:1px solid #eee;
 
     }
 
+    .nav-menu a{
+
+    display:block;
+
+    padding:20px 30px;
+
+    font-size:18px;
+
+    }
 }
 
 /* メインビジュアル */

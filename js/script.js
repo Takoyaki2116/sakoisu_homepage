@@ -3,6 +3,7 @@ const nav = document.getElementById("nav");
 
 hamburger.addEventListener("click", () => {
     
+    hamburger.classList.toggle("active")
     nav.classList.toggle("active");
 
 });
